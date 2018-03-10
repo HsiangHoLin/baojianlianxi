@@ -1,0 +1,25 @@
+To start this game, go to your browser and click on the "file" menu and select "open..." and select the file "index.html"
+
+To use your own questions and answers and make other modifications to this game, open the file QandA.js in a text editor
+	Questions and Answers are the bulk of this file. The format should be pretty obvious. 
+	The category names are at the bottom of this file.
+	The amount of time given per question is at the bottom of this file.
+	The title of the game can be set at the bottom of this file.
+	Other options can be set in this file.
+	
+
+Note 1 : If either your question or answer needs to include any double quote marks, you should put a backwards slash before it.
+So "test" should be \"test\"
+
+Example:
+var cat1 = new Array(
+    new qAndA(100, "This is a \"test\" phrase.", "The word test should be in quotes!"),
+    ...
+);
+
+The double quote marks already included should not be altered.
+
+
+Note 2: I have tested this game informally using Internet Explorer 6.x and Mozilla 1.5 with success.
+
+If you have any questions, you can email me: tward@osu-okmulgee.edu

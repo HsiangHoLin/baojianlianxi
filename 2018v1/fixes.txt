@@ -1,0 +1,7 @@
+Fixed problem where revisited questions did not display the correct values or allow the amounts to be increased or decreased.
+
+Added scrollbars to popup window.
+
+Changed default height of popup window (+50).
+
+Made width and height of popup window customizable via quizgame.js (PopupHeight and PopupWidth)
