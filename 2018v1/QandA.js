@@ -17,48 +17,48 @@ var PopupHeight = 800;
 
 // 聖經知多少
 var cat1 = new Array(
-    new qAndANew(SQV*1, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*2, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*3, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*4, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*5, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
+    new qAndANew(SQV*1, "羅馬書之後的一卷書是什麼？", ["加拉太書", "哥林多前書", "以弗所書", "腓利比書"], 2),
+    new qAndANew(SQV*2, "哪卷書被新約作者引用的最多？", ["以賽亞書", "箴言", "詩篇", "但以理書"], 3),
+    new qAndANew(SQV*3, "哪一本書最“短氣”，全書不及四百字？", ["約拿書", "約翰二書", "馬拉基書", "彌迦書"], 2),
+    new qAndANew(SQV*4, "哪一本書記錄耶穌的比喻最多？", ["路加福音", "馬太福音", "約翰福音", "馬可福音"], 1),
+    new qAndANew(SQV*5, "替保羅代筆寫羅馬書的是誰？", ["路加", "該猶", "馬可", "德丟"], 4)
 );
 
 // 讀經大考察
 var cat2 = new Array(
-    new qAndANew(SQV*1, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*2, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*3, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*4, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
-    new qAndANew(SQV*5, "聖經居中的書卷是？", ["約拿書", "箴言", "馬拉基書", "彌迦書"], 4),
+    new qAndANew(SQV*1, "保羅說凡是被神的靈引導的，都是神的什麽？", ["器皿", "僕人", "朋友", "兒子"], 4),
+    new qAndANew(SQV*2, "箴言說：不輕易發怒的，勝過什麽？", ["己心", "勇士", "仇敵", "取城"], 2),
+    new qAndANew(SQV*3, "保羅說若順著什麽而行，就不放縱肉體的情欲了？", ["智慧", "聖靈", "真理", "律法"], 2),
+    new qAndANew(SQV*4, "耶穌說：“這就是律法和先知的道理。” “這”是什麽？", ["盡心，盡力，盡性愛神", "不要論斷人，免得被論斷", "好樹不能結坏果子；坏樹不能結好果子", "願意人怎樣待你，就要怎樣待人"], 4),
+    new qAndANew(SQV*5, "提到人類的罪，保羅說：罪是從一人入了世界，死又是從罪來的，於是死就臨到眾人，因為眾人都犯了罪。這節經文出於: ", [" 哥林多前書4:9", "羅馬書5:12", "以弗所書2:3", "歌羅西書3:15"], 2)
 );
 
 // 3)	songs
 var cat3 = new Array(
-    new qAndA(SQV*1, "<embed src=\"niftyplayer.swf?file=1.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "凡事都能做"),
-    new qAndA(SQV*2, "<embed src=\"niftyplayer.swf?file=2.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "全然為你"),
-    new qAndA(SQV*3, "<embed src=\"niftyplayer.swf?file=3.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "盡情的敬拜"),
-    new qAndA(SQV*4, "<embed src=\"niftyplayer.swf?file=4.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "耶和華神已掌權"),
-    new qAndA(SQV*5, "<embed src=\"niftyplayer.swf?file=5.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "神羔羊配得")
+    new qAndA(SQV*1, "<embed src=\"niftyplayer.swf?file=1.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "愛中相遇"),
+    new qAndA(SQV*2, "<embed src=\"niftyplayer.swf?file=2.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "每一天我需要你"),
+    new qAndA(SQV*3, "<embed src=\"niftyplayer.swf?file=3.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "醫治的愛"),
+    new qAndA(SQV*4, "<embed src=\"niftyplayer.swf?file=4.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "日日夜夜"),
+    new qAndA(SQV*5, "<embed src=\"niftyplayer.swf?file=5.mp3&as=1\" width=\"165\" height=\"38\" type=\"application/x-shockwave-flash\"\\><br>", "再次將我更新")
 );
 
 // 4)	金句比一比
 var cat4 = new Array(
-    new qAndACloze(SQV*1, "_____沒有_____是死的，_____沒有_____也是死的。", ["身體", "靈魂", "信心", "行為"], "---雅2:26"),
-    new qAndACloze(SQV*2, "_____是活潑的，是有_____的，比一切_____更快，甚至魂與靈，骨節與骨髓，都能_____，連心中的思念和主意，都能_____。", ["神的道", "功效", "兩刃的劍", "刺入剖開", "辨明"], "---來 4:12"),
-    new qAndA(SQV*3, "凡勞苦____的人可以到我這裡來，我就使你們____。我心裡_____，你們當負我的軛，學____；這樣，你們心裡就必_____。因為我的軛是____的，我的擔子是____的。", "凡勞苦<u>擔重擔</u>的人可以到我這裡來，我就使你們<u>得安息</u>。我心裡<u>柔和謙卑</u>，你們當負我的軛，學<u>我的樣式</u>；這樣，你們心裡就必<u>得享安息</u>。因為我的軛是<u>容易</u>的，我的擔子是<u>輕省</u>的。<br>--- 馬太福音11:28-30 "),
-    new qAndA(SQV*4, "不要___這個世界，只要______而___，叫你們___何為神的_____、_____、____的旨意。", "不要<u>效法</u>這個世界，只要<u>心意更新</u>而<u>變化</u>，叫你們<u>察驗</u>何為神的<u>善良</u>、<u>純全</u>、<u>可喜悅</u>的旨意。 <br>---羅馬書 12:2  "),
-    new qAndA(SQV*5, "就是少年人也要_________，強壯的也必_________，但那等候耶和華的，必_________，他們必_________。他們_____卻不_____，_____卻不_____。", "就是少年人也要<u>疲乏困倦</u>，強壯的也必<u>全然跌倒</u>，但那等候耶和華的，必<u>重新得力</u>。他們必<u>如鷹展翅上騰</u>，他們<u>奔跑</u>卻不<u>困倦</u>，<u>行走</u>卻不<u>疲乏</u>。<br>---以賽亞書40:30  ")
+    new qAndACloze(SQV*1, "求你_____我們怎樣_____自己的日子，好叫我們得著_________。", ["指教", "數算", "智慧的心"], "---詩篇90:12 "),
+    new qAndACloze(SQV*2, "我若能說_____的_____，並_____的_____，卻沒有___，我就成了_____、_____一般。",["萬人", "方言", "天使", "話語", "愛", "鳴的鑼", "響的鈸"], "---哥林多前書 13:1"),
+    new qAndACloze(SQV*3, "原來我們不是顧念_____，乃是顧念_____，因為_____的是_____的，_____的是_____的。", ["所見的", "所不見的", "所見的", "暫時", "所不見的", "永遠"], "---哥林多後書 4:18"),
+    new qAndACloze(SQV*4, "凡事都不可_____人，唯有_________，要常以為_____。因為_____的，就完全了_____。", ["虧欠", "彼此相愛", "虧欠", "愛人", "律法"], "---羅馬書13:8"),
+    new qAndACloze(SQV*5, "因為_____而不_____的，就像_________看自己_________，走後，隨即_____他的_________。", ["聽道", "行道", "人對著鏡子", "本來的面目", "忘了", "相貌如何"], "---雅1:23-24")
                            
 );
 
 // 5)   腦筋急轉彎
 var cat5 = new Array(
-	new qAndA(SQV*1, "怎樣使一隻麻雀安靜下來？<br><br>", "壓它一下<br>因為:鴉雀無聲"),
-	new qAndA(SQV*2, "因為有心，寶貝易得（打一詞語）<br><br>", "恩賜"),
-	new qAndA(SQV*3, "哪個數位最勤快，哪個數位最懶？ <br><br>", "一不做,二不休"),
-	new qAndA(SQV*4, "一隻烏龜，因背著十字架而出了名（打一成語） <br><br>", "實至名歸（十字名龜）"),
-	new qAndA(SQV*5, "來了一隻熊（打一成語） <br><br>", "有備而(bear)來")
+	new qAndA(SQV*1, "世界上除了火車啥車最長？", "塞車"),
+	new qAndA(SQV*2, "什麼東西明明是你的，別人卻用的比你多得多？", "你的名字"),
+	new qAndA(SQV*3, "兩對父子去買帽子，為什麼只買了三頂？", "三代人"),
+	new qAndA(SQV*4, "為什麼關羽比張飛死的早？（四字成語）", "紅顏薄命"),
+	new qAndA(SQV*5, "第十一本書（打一成語）", "不可思議（BOOK11）")
 );
 
 
@@ -74,8 +74,8 @@ var Titles = new Array( "聖經知多少",
                         "腦筋急轉彎"
 						);
 
-var FinalJeopardyA = "背誦 愛的真諦";
-var FinalJeopardyQ = "愛是恒久忍耐，又有恩慈。愛是不嫉妒，不自誇，不張狂，不做害羞的事。不求自己益處，不輕易發怒，不計算別人的惡，不喜歡不義，只喜歡真理。凡事包容，凡事相信，凡事盼望，凡事忍耐。愛是永不止息。<br>---哥林多前書第13:4-8 ";
+var FinalJeopardyA = "以畫服人----每組派出一個代表上臺接受主持人的命題，再回到組裡用紙筆劃出，讓組員猜出是什麼命題，用時最短的小組獲勝";
+var FinalJeopardyQ = "五體投地";
 
 
 // Define the amount of time given to answer each question.

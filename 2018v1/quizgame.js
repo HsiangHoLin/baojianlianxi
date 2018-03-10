@@ -115,46 +115,6 @@ function qAndA(value, a, q)
     this.getQuestion = getQuestion;
     this.getAnswer = getAnswer;
 }
-function qAndANew(value, desc, aArray, qIdx)
-{
-    // Set instance variables for this object.
-    this.value = value;
-    var count = 1;
-    for (i = 0; i < aArray.length; ++i) {
-    	aArray[i] = count + ". " + aArray[i];
-    	count = count + 1;
-    }
-    this.answer = desc + "<br><br>" + aArray.join("<br>");
-    this.question = aArray[qIdx-1];
-
-    // Add methods to this object.
-    this.getValue = getValue;
-    this.getQuestion = getQuestion;
-    this.getAnswer = getAnswer;
-}
-function qAndACloze(value, a, aArray, ref)
-{
-    // Set instance variables for this object.
-    this.value = value;
-    this.answer = a;
-
-    var vec = a.replace(/_+/g,"_");
-    this.question = "";
-    var used = 0;
-    for (i = 0; i < vec.length; ++i) {
-    	if (vec[i] == "_" && used < aArray.length) {
-    		this.question += "<u>" + aArray[used] + "</u>";
-    		used += 1;
-    	} else {
-    		this.question += vec[i];
-    	}
-    }
-    this.question += "<br>" + ref;
-    // Add methods to this object.
-    this.getValue = getValue;
-    this.getQuestion = getQuestion;
-    this.getAnswer = getAnswer;
-}
 function getValue() { return this.value; }
 function getQuestion() { return this.question; }
 function getAnswer() { return this.answer; }
@@ -199,5 +159,44 @@ function openWindow(url,w,h,tb,stb,l,mb,sb,rs,x,y)
     CurrentWindow.focus();
 }
 
+function qAndANew(value, desc, aArray, qIdx)
+{
+    // Set instance variables for this object.
+    this.value = value;
+    var count = 1;
+    for (i = 0; i < aArray.length; ++i) {
+    	aArray[i] = count + ". " + aArray[i];
+    	count = count + 1;
+    }
+    this.answer = desc + "<br><br>" + aArray.join("<br>");
+    this.question = aArray[qIdx-1];
 
+    // Add methods to this object.
+    this.getValue = getValue;
+    this.getQuestion = getQuestion;
+    this.getAnswer = getAnswer;
+}
+function qAndACloze(value, a, aArray, ref)
+{
+    // Set instance variables for this object.
+    this.value = value;
+    this.answer = a;
+
+    var vec = a.replace(/_+/g,"_");
+    this.question = "";
+    var used = 0;
+    for (i = 0; i < vec.length; ++i) {
+    	if (vec[i] == "_" && used < aArray.length) {
+    		this.question += "<u>" + aArray[used] + "</u>";
+    		used += 1;
+    	} else {
+    		this.question += vec[i];
+    	}
+    }
+    this.question += "<br>" + ref;
+    // Add methods to this object.
+    this.getValue = getValue;
+    this.getQuestion = getQuestion;
+    this.getAnswer = getAnswer;
+}
 
