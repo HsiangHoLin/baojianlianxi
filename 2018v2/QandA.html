@@ -1,0 +1,176 @@
+﻿<script src="quizgame.js"></script>
+<script src="QandA.js"></script>
+
+<!--
+This file retrieved from the JS-Examples archives
+http://www.js-examples.com
+100s of free ready to use scripts, tutorials, forums.
+Author: BrainySearch - http://www.brainysearch.com/
+-->
+<SCRIPT>
+    var category, row, questionValue;
+    var args = parseQueryString ();
+    var showQuestion = false;
+	var buzzer = false;
+	var teamCount = 0;
+    function parseQueryString (str)
+    {
+        str = str ? str : location.search;
+        var query = str.charAt(0) == '?' ? str.substring(1) : str;
+        var args = new Object();
+        if (query)
+        {
+            var fields = query.split('&');
+            for (var f = 0; f < fields.length; f++)
+            {
+            var field = fields[f].split('=');
+            args[unescape(field[0].replace(/\+/g, ' '))] = unescape(field[1].replace(/\+/g, ' '));
+            }
+        }
+        return args;
+    }
+
+	// Some browsers include the parameters with the url, some browsers only
+	//	give you the page. If the url has a ?, the parameters are already part
+	//	of the url and we do not need to add them.
+
+	var buildURL = false;
+    var url=window.location.href;
+    if (url.indexOf("?") < 0)
+    {
+    	url += "?";
+    	buildURL = true;
+    }
+    else url += "&";
+
+	for (var arg in args)
+	{
+		if (buildURL == true && arg != "buzzer") url += arg + "=" + args[arg] + "&";
+		if (arg == "cat") category = args[arg]-1;
+		if (arg == "row") row = args[arg]-1;
+		if (arg == "amt") questionValue = args[arg];
+		if (arg == "question") showQuestion = args[arg];
+		if (arg == "teamcount") teamCount = parseInt(args[arg]);
+		if (arg == "buzzer") buzzer = true;
+	}
+
+    var Question = "";
+    if (showQuestion)
+    {
+        Question = QuestionsAndAnswers[category][row].getQuestion();
+    }
+    var Answer = QuestionsAndAnswers[category][row].getAnswer();
+
+    function getQuestion()
+    {
+		//need to get of buzzer=true
+		var new_url = url;
+		var index = url.indexOf("buzzer");
+		if (index > 0)
+			new_url = url.substring(0, index);
+        window.location=new_url+"question=true";
+    }
+
+	function soundBuzzer()
+	{
+		window.location=url+"buzzer=true";
+	}
+	
+	// This decrements the timer 1 second at a time.
+	function decTimer(id)
+	{
+		var el = document.getElementById(id);
+		if (el == null) { alert("timer '" + id + "' not found"); return; }
+		var val = parseInt(getInnerText(el));
+
+		val--;	// Decrement.
+		el.firstChild.nodeValue = val;
+
+		// Change the color to red for the last 10 seconds.
+		if (val < 10) el.style.color="red";
+
+		// Reset the timer to go off in 1 second.
+		if (val > 0) setTimeout("decTimer('" + id + "')", 1000);
+		
+		if (val == 0) soundBuzzer();
+		
+	}
+
+</SCRIPT>
+
+
+<html>
+    <head>
+        <title> Questions &amp; Answers </title>
+		<STYLE>
+			BODY { background-image: url(qa_bg.gif) }
+			TD { font-size: 28 }
+		</STYLE>
+    </head>
+    <body onload="if(!showQuestion && !buzzer) decTimer('timer');">	
+	<form>
+    <table cellspacing=10 id="QATable">
+    <tr>
+    	<td colspan=2>
+			<h2> <i>
+			<script>
+				document.write(Titles[category] + " 的 " + questionValue + " 分");
+			</script>
+			</i> </h2>
+		</td>
+	</tr>
+	<tr>
+    	<td nowrap align=right width=75>
+    		<script>
+				if (!showQuestion) {
+					// Set the timer.
+					if(buzzer) //if we're doing buzzer page, leave timer at zero
+						document.write("<h1 id='timer' style='font-size: 48pt; font-family: Arial; color: red;'>0</h1>");
+					else
+						document.write("<h1 id='timer' style='font-size: 48pt; font-family: Arial; color: green;'>" + TimePerQuestion + "</h1>");
+				}
+    		</script>
+    	</td>
+		<td>
+			<B><script> document.write(Answer); </script></B>
+			<br><br>
+
+			<script>
+				if (showQuestion)
+				{
+					document.write("<h1>" + Question + "</h1>");
+					//document.write("<br><br><input type='button' onclick='window.self.close();' value='Finished'>");
+					document.write("<br><br>");
+
+					document.write("<TABLE bgcolor=white BORDER=2 cellspacing=0 cellpadding=2>");
+					document.write("<tr><td><b>正確</b></td>");
+					for (var i = 1; i<=teamCount; i++)
+					{
+						document.write("<td>");
+						document.write("<input type='button' onclick='top.opener.incScore(" + i + "," + (questionValue) + "); top.opener.closeWindow();' value='Team " + i + "'>");
+						document.write("</td>");
+					}
+					document.write("</tr><tr><td><b>錯误</b></td>");
+					for (var i = 1; i<=teamCount; i++)
+					{
+						document.write("<td>");
+						document.write("<input type='button' onclick='top.opener.decScore(" + i + "," + (questionValue) + "); top.opener.closeWindow();' value='Team " + i + "'>");
+						document.write("</td>");
+					}
+					document.write("</tr></table>");
+				}
+				else
+				{
+					document.write("<input type='button' onclick='getQuestion();' value='答案'>");
+				}
+				
+				if(buzzer) //let's sound the buzzer
+					document.write("<embed src=\"niftyplayer.swf?file=Air_Horn.mp3&as=1\" width=\"0\" height=\"0\" type=\"application/x-shockwave-flash\"\\>");
+				
+				document.close();
+			</script>
+		</td>
+		</tr>
+	</table>
+    </form></body>
+</html>
